@@ -1,2 +1,3 @@
-# restaurant-appointment-system
-A web-based restaurant appointment booking system
+# Restaurant Appointment System
+
+A web-based system that allows customers to book restaurant appointments online.
