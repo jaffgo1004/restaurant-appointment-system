@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Court Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Food Court Appointment System</h1>
+            <p>Skip the queue, book your meal in advance!</p>
+        </header>
+
+        <section class="booking-form">
+            <h2>Make an Appointment</h2>
+            <form id="appointmentForm">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                
+                <select id="stallName" required>
+                    <option value="" disabled selected>Select a Stall</option>
+                    <option value="Chicken Rice Stall">Chicken Rice Stall</option>
+                    <option value="Laksa Corner">Laksa Corner</option>
+                    <option value="Western Food">Western Food</option>
+                    <option value="Vegetarian Delight">Vegetarian Delight</option>
+                </select>
+
+                <input type="time" id="bookingTime" required>
+                
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+
+        <section class="appointment-display">
+            <h2>Current Appointments</h2>
+            <ul id="appointmentList">
+                </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
