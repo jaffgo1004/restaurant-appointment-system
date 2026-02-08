@@ -1,61 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --dark: #1a1a1a;
+    --gray: #888;
+    --light-bg: #f8f8f8;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Lato', sans-serif;
+    background-color: #eee; /* 稍微深一点的背景衬托白色容器 */
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
+    color: var(--dark);
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--gold);
 }
 
+/* 头部设计 */
 header {
     text-align: center;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-h1 { color: #333; }
-
-.booking-form {
-    margin-bottom: 30px;
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-input, select, button {
+header p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 表单细节 */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--gold);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
     display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--dark);
+    letter-spacing: 1px;
 }
 
+/* 带图标的输入框容器 */
+.field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.field-wrapper .icon {
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 10px 10px 30px; /* 左侧留出图标空间 */
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-bottom: 1px solid var(--gold);
+}
+
+/* 按钮 */
 button {
-    background-color: #28a745;
+    width: 100%;
+    background-color: var(--dark);
     color: white;
+    padding: 16px;
     border: none;
     cursor: pointer;
     font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: var(--gold);
 }
 
-.appointment-display ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* 预约列表 */
 .appointment-item {
-    background: #e9ecef;
+    padding: 15px;
+    border-left: 3px solid var(--gold);
+    background: var(--light-bg);
     margin-bottom: 10px;
-    padding: 10px;
-    border-left: 5px solid #007bff;
-    border-radius: 4px;
+    list-style: none;
+    font-size: 0.9rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
