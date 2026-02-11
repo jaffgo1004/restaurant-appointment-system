@@ -505,6 +505,4 @@ This project was developed as an academic assignment for BAI21113 Software Engin
 
 **Project Status:** ✅ Completed and Delivered
 
-**Final Grade Target:** Excellent (80-100%)
-
 **Last Updated:** February 11, 2026
