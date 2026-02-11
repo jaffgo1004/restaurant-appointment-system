@@ -5,11 +5,12 @@
     --dark: #1a1a1a;
     --gray: #888;
     --light-bg: #f8f8f8;
+    --red: #e74c3c;
 }
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #eee; /* 稍微深一点的背景衬托白色容器 */
+    background-color: #eee;
     margin: 0;
     padding: 40px 20px;
     color: var(--dark);
@@ -24,7 +25,7 @@ body {
     border-top: 4px solid var(--gold);
 }
 
-/* 头部设计 */
+/* Header */
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -48,7 +49,7 @@ header p {
     letter-spacing: 1px;
 }
 
-/* 表单细节 */
+/* Form Sections */
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
@@ -72,7 +73,7 @@ label {
     letter-spacing: 1px;
 }
 
-/* 带图标的输入框容器 */
+/* Input Fields with Icons */
 .field-wrapper {
     position: relative;
     display: flex;
@@ -88,11 +89,12 @@ label {
 
 input, select {
     width: 100%;
-    padding: 10px 10px 10px 30px; /* 左侧留出图标空间 */
+    padding: 10px 10px 10px 30px;
     border: none;
     border-bottom: 1px solid #ddd;
     font-size: 15px;
     transition: 0.3s;
+    background: transparent;
 }
 
 input:focus, select:focus {
@@ -100,8 +102,8 @@ input:focus, select:focus {
     border-bottom: 1px solid var(--gold);
 }
 
-/* 按钮 */
-button {
+/* Submit Button */
+button[type="submit"] {
     width: 100%;
     background-color: var(--dark);
     color: white;
@@ -119,22 +121,106 @@ button {
     gap: 10px;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: var(--gold);
 }
 
-/* 预约列表 */
+/* Appointment List */
+#appointmentList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .appointment-item {
     padding: 15px;
     border-left: 3px solid var(--gold);
     background: var(--light-bg);
     margin-bottom: 10px;
-    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.9rem;
     animation: fadeIn 0.5s ease;
+    transition: all 0.3s;
 }
 
+.appointment-item:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: all 0.3s;
+    border-radius: 4px;
+    width: auto;
+    margin: 0;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.delete-btn:hover {
+    color: var(--red);
+    background: rgba(231, 76, 60, 0.1);
+    transform: scale(1.1);
+}
+
+.delete-btn i {
+    pointer-events: none;
+}
+
+/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .appointment-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .delete-btn {
+        align-self: flex-end;
+    }
+}
+
+/* Empty State */
+#appointmentList:empty::before {
+    content: "No reservations yet. Book your first table!";
+    display: block;
+    padding: 30px;
+    text-align: center;
+    color: var(--gray);
+    font-style: italic;
+    background: var(--light-bg);
+    border-radius: 4px;
 }
