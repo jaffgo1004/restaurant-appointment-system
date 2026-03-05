@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadAppointments();
 });
 
-// Handle form submission
+// Handle form submissiondgngndgn
 document.getElementById('appointmentForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
