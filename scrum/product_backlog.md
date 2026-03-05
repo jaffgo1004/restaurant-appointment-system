@@ -3,7 +3,7 @@
 ## Restaurant Appointment System - Product Backlog
 
 **Product Owner:** Chang  
-**Last Updated:** February 11, 2026
+**Last Updated:** February 11, 2026。
 
 ---
 
