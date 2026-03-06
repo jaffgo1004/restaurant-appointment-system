@@ -4,7 +4,7 @@ A web-based restaurant reservation system that enables customers to book dining 
 
 ---
 
-Student Information
+Student Information.
 - Jaff go (BIT_A2201F-2501001)
 - Ngoi Chang Zen (BAI_B2009F-2601001)
 - Lam Chuan Fong (BAI_B2009F-2601010)
